@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/frameLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".FragmentHome">
+
+    <View
+        android:id="@+id/view"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@android:color/holo_blue_light"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="@+id/view"
+        app:layout_constraintStart_toStartOf="@+id/view"
+        app:layout_constraintTop_toTopOf="@id/view"
+        app:layout_constraintBottom_toBottomOf="@id/view"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="16dp"
+            android:src="@drawable/ic_person_black_24dp"
+            android:layout_marginTop="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Maulana Ibrahim"
+            android:textColor="@android:color/white"
+            android:layout_marginTop="8dp"
+            android:textSize="24dp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/view"
+        app:layout_constraintVertical_bias="0.0">
+
+        <Button
+            android:id="@+id/btnTransfer"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:backgroundTint="@android:color/white"
+            android:text="Transfer"
+            android:textAlignment="viewStart"
+            android:textAllCaps="false"
+            android:drawableLeft="@drawable/ic_transaction"
+            android:drawableTint="@android:color/holo_red_dark"
+            android:drawablePadding="40dp"
+            android:textColor="@android:color/black"
+            android:layout_margin="8dp"
+            />
+
+        <Button
+            android:id="@+id/btnHistoryTransaction"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:backgroundTint="@android:color/white"
+            android:drawableLeft="@drawable/ic_history_transaction"
+            android:drawablePadding="40dp"
+            android:drawableTint="@android:color/holo_orange_dark"
+            android:textAlignment="textStart"
+            android:textAllCaps="false"
+            android:text="History Transaction"
+            android:textColor="@android:color/black"
+            android:layout_margin="8dp"/>
+
+        <Button
+            android:id="@+id/btnBalance"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:backgroundTint="@android:color/white"
+            android:text="Balance"
+            android:drawableLeft="@drawable/ic_wallet"
+            android:textAlignment="textStart"
+            android:drawablePadding="40dp"
+            android:textAllCaps="false"
+            android:drawableTint="@android:color/holo_green_dark"
+            android:textColor="@android:color/black"
+            android:layout_margin="8dp"
+            />
+
+
+
+    </LinearLayout>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

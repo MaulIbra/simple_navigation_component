@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/transaction_navigation"
+    app:startDestination="@id/fragmentInputRecepient2">
+
+    <fragment
+        android:id="@+id/fragmentInputRecepient2"
+        android:name="com.example.exercise_navigation.FragmentInputRecepient"
+        android:label="fragment_input_recepient"
+        tools:layout="@layout/fragment_input_recepient" >
+        <action
+            android:id="@+id/action_fragmentInputRecepient2_to_fragmentInputAmount"
+            app:destination="@id/fragmentInputAmount" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentInputAmount"
+        android:name="com.example.exercise_navigation.FragmentInputAmount"
+        android:label="fragment_input_amount"
+        tools:layout="@layout/fragment_input_amount"/>
+</navigation>
