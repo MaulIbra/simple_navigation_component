@@ -18,5 +18,14 @@
         android:id="@+id/fragmentInputAmount"
         android:name="com.example.exercise_navigation.FragmentInputAmount"
         android:label="fragment_input_amount"
-        tools:layout="@layout/fragment_input_amount"/>
+        tools:layout="@layout/fragment_input_amount">
+        <action
+            android:id="@+id/action_fragmentInputAmount_to_fragmentConfirmation"
+            app:destination="@id/fragmentConfirmation" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentConfirmation"
+        android:name="com.example.exercise_navigation.FragmentConfirmation"
+        android:label="fragment_confirmation"
+        tools:layout="@layout/fragment_confirmation" />
 </navigation>
