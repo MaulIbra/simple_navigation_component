@@ -43,63 +43,70 @@
 
     </LinearLayout>
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/view"
-        app:layout_constraintVertical_bias="0.0">
+        app:layout_constraintVertical_bias="0.0"
+        >
 
-        <Button
-            android:id="@+id/btnTransfer"
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:backgroundTint="@android:color/white"
-            android:text="Transfer"
-            android:textAlignment="viewStart"
-            android:textAllCaps="false"
-            android:drawableLeft="@drawable/ic_transaction"
-            android:drawableTint="@android:color/holo_red_dark"
-            android:drawablePadding="40dp"
-            android:textColor="@android:color/black"
-            android:layout_margin="8dp"
-            />
+            android:layout_height="0dp"
+            android:orientation="vertical">
 
-        <Button
-            android:id="@+id/btnHistoryTransaction"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:backgroundTint="@android:color/white"
-            android:drawableLeft="@drawable/ic_history_transaction"
-            android:drawablePadding="40dp"
-            android:drawableTint="@android:color/holo_orange_dark"
-            android:textAlignment="textStart"
-            android:textAllCaps="false"
-            android:text="History Transaction"
-            android:textColor="@android:color/black"
-            android:layout_margin="8dp"/>
+            <Button
+                android:id="@+id/btnTransfer"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:backgroundTint="@android:color/white"
+                android:text="Transfer"
+                android:textAlignment="viewStart"
+                android:textAllCaps="false"
+                android:drawableLeft="@drawable/ic_transaction"
+                android:drawableTint="@android:color/holo_red_dark"
+                android:drawablePadding="40dp"
+                android:textColor="@android:color/black"
+                android:layout_margin="8dp"
+                />
 
-        <Button
-            android:id="@+id/btnBalance"
-            android:layout_width="match_parent"
-            android:layout_height="80dp"
-            android:backgroundTint="@android:color/white"
-            android:text="Balance"
-            android:drawableLeft="@drawable/ic_wallet"
-            android:textAlignment="textStart"
-            android:drawablePadding="40dp"
-            android:textAllCaps="false"
-            android:drawableTint="@android:color/holo_green_dark"
-            android:textColor="@android:color/black"
-            android:layout_margin="8dp"
-            />
+            <Button
+                android:id="@+id/btnHistoryTransaction"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:backgroundTint="@android:color/white"
+                android:drawableLeft="@drawable/ic_history_transaction"
+                android:drawablePadding="40dp"
+                android:drawableTint="@android:color/holo_orange_dark"
+                android:textAlignment="textStart"
+                android:textAllCaps="false"
+                android:text="History Transaction"
+                android:textColor="@android:color/black"
+                android:layout_margin="8dp"/>
+
+            <Button
+                android:id="@+id/btnBalance"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:backgroundTint="@android:color/white"
+                android:text="Balance"
+                android:drawableLeft="@drawable/ic_wallet"
+                android:textAlignment="textStart"
+                android:drawablePadding="40dp"
+                android:textAllCaps="false"
+                android:drawableTint="@android:color/holo_green_dark"
+                android:textColor="@android:color/black"
+                android:layout_margin="8dp"
+                />
 
 
 
-    </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
 
 
 

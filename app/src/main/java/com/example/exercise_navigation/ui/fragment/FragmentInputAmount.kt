@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.os.bundleOf
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.exercise_navigation.R
@@ -18,6 +19,9 @@ import kotlinx.android.synthetic.main.fragment_input_amount.*
 class FragmentInputAmount : Fragment(),View.OnClickListener {
 
     lateinit var navController:NavController
+    lateinit var bankName:String
+    lateinit var accountNumber:String
+    lateinit var accountName:String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,12 +43,24 @@ class FragmentInputAmount : Fragment(),View.OnClickListener {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        tvName.text = "To : ${arguments?.getString("name")}"
+        accountName = arguments?.getString("name").toString()
+        accountNumber = arguments?.getString("accountNumber").toString()
+        bankName = arguments?.getString("bankName").toString()
+        tvName.text = "To : ${accountName}"
+
     }
 
     override fun onClick(v: View?) {
         when(v){
-            btnSend -> navController.navigate(R.id.action_fragmentInputAmount_to_fragmentConfirmation)
+            btnSend -> {
+                var bundle = bundleOf(
+                    "name" to accountName,
+                    "bankName" to bankName,
+                    "accountNumber" to accountNumber,
+                    "amount" to etAmount.text.toString()
+                )
+                navController.navigate(R.id.action_fragmentInputAmount_to_fragmentConfirmation,bundle)
+            }
         }
     }
 }

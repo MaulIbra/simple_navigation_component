@@ -43,8 +43,7 @@ class FragmentHome : Fragment(),View.OnClickListener {
 
     override fun onClick(view: View?) {
         when(view){
-            btnTransfer -> startActivity(Intent(context,
-                TransactionActivity::class.java))
+            btnTransfer -> navController.navigate(R.id.action_fragmentHome_to_transactionActivity)
             btnHistoryTransaction -> navController.navigate(R.id.action_fragmentHome_to_fragmentHistory)
             btnBalance -> navController.navigate(R.id.action_fragmentHome_to_fragmentBalance)
         }

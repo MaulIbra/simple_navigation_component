@@ -41,7 +41,11 @@ class FragmentInputRecepient : Fragment(),View.OnClickListener {
     override fun onClick(v: View?) {
         when(v){
             btnNext -> {
-                var bundle = bundleOf("name" to etName.text.toString())
+                var bundle = bundleOf(
+                    "name" to etName.text.toString(),
+                    "bankName" to spinnerBank.selectedItem.toString(),
+                    "accountNumber" to etAccountNumber.text.toString()
+                )
                 navController.navigate(R.id.action_fragmentInputRecepient2_to_fragmentInputAmount,bundle)
             }
         }

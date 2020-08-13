@@ -1,11 +1,15 @@
 package com.example.exercise_navigation.ui.fragment
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.example.exercise_navigation.R
+import com.example.exercise_navigation.ui.activity.MainActivity
+import kotlinx.android.synthetic.main.fragment_confirmation.*
+import kotlinx.android.synthetic.main.fragment_input_amount.*
 
 /**
  * A simple [Fragment] subclass.
@@ -24,6 +28,13 @@ class FragmentConfirmation : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_confirmation, container, false)
+    }
+
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        tvBank.text = "Bank ${arguments?.getString("bankName").toString()}"
+        tvAccountNumber.text = "${arguments?.getString("accountNumber").toString()} ${arguments?.getString("name").toString().toUpperCase()}"
+        tvAmount.text = arguments?.getString("amount").toString()
     }
 
 }

@@ -24,16 +24,17 @@
             android:layout_width="100dp"
             android:layout_height="100dp"
             android:src="@drawable/ic_pay"
+            android:layout_marginBottom="8dp"
             />
 
         <com.google.android.material.textfield.TextInputLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp">
+            android:layout_height="wrap_content">
 
             <Spinner
+                android:id="@+id/spinnerBank"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
+                android:layout_height="50dp"
                 android:prompt="@string/bank_prompt"
                 android:entries="@array/bank_arrays" />
 
@@ -49,6 +50,7 @@
                 android:id="@+id/etAccountNumber"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:inputType="number"
                 android:hint="Account Number" />
             
         </com.google.android.material.textfield.TextInputLayout>
@@ -61,6 +63,7 @@
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/etName"
                 android:layout_width="match_parent"
+                android:inputType="text"
                 android:layout_height="match_parent"
                 android:hint="Name" />
 
