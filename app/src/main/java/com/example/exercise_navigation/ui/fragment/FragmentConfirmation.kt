@@ -1,17 +1,18 @@
-package com.example.exercise_navigation
+package com.example.exercise_navigation.ui.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.example.exercise_navigation.R
 
 /**
  * A simple [Fragment] subclass.
- * Use the [FragmentBalance.newInstance] factory method to
+ * Use the [FragmentConfirmation.newInstance] factory method to
  * create an instance of this fragment.
  */
-class FragmentBalance : Fragment() {
+class FragmentConfirmation : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -22,6 +23,7 @@ class FragmentBalance : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_balance, container, false)
+        return inflater.inflate(R.layout.fragment_confirmation, container, false)
     }
+
 }

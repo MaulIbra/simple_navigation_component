@@ -1,4 +1,4 @@
-package com.example.exercise_navigation
+package com.example.exercise_navigation.ui.fragment
 
 import android.content.Intent
 import android.os.Bundle
@@ -8,6 +8,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import com.example.exercise_navigation.R
+import com.example.exercise_navigation.ui.activity.TransactionActivity
 import kotlinx.android.synthetic.main.fragment_home.*
 
 /**
@@ -41,7 +43,8 @@ class FragmentHome : Fragment(),View.OnClickListener {
 
     override fun onClick(view: View?) {
         when(view){
-            btnTransfer -> startActivity(Intent(context,TransactionActivity::class.java))
+            btnTransfer -> startActivity(Intent(context,
+                TransactionActivity::class.java))
             btnHistoryTransaction -> navController.navigate(R.id.action_fragmentHome_to_fragmentHistory)
             btnBalance -> navController.navigate(R.id.action_fragmentHome_to_fragmentBalance)
         }

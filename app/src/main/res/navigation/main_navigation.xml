@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/fragmentHome"
-        android:name="com.example.exercise_navigation.FragmentHome"
+        android:name="com.example.exercise_navigation.ui.fragment.FragmentHome"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" >
         <action
@@ -22,17 +22,17 @@
     </fragment>
     <fragment
         android:id="@+id/fragmentBalance"
-        android:name="com.example.exercise_navigation.FragmentBalance"
+        android:name="com.example.exercise_navigation.ui.fragment.FragmentBalance"
         android:label="fragment_balance"
         tools:layout="@layout/fragment_balance" />
     <fragment
         android:id="@+id/fragmentHistory"
-        android:name="com.example.exercise_navigation.FragmentHistory"
+        android:name="com.example.exercise_navigation.ui.fragment.FragmentHistory"
         android:label="fragment_history"
         tools:layout="@layout/fragment_history" />
     <activity
         android:id="@+id/transactionActivity"
-        android:name="com.example.exercise_navigation.TransactionActivity"
+        android:name="com.example.exercise_navigation.ui.activity.TransactionActivity"
         android:label="activity_transaction"
         tools:layout="@layout/activity_transaction" />
 </navigation>

@@ -1,4 +1,4 @@
-package com.example.exercise_navigation
+package com.example.exercise_navigation.ui.fragment
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.core.os.bundleOf
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
+import com.example.exercise_navigation.R
 import kotlinx.android.synthetic.main.fragment_input_recepient.*
 
 /**

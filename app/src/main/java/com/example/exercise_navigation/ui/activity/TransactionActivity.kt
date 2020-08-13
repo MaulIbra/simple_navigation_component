@@ -1,7 +1,8 @@
-package com.example.exercise_navigation
+package com.example.exercise_navigation.ui.activity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.exercise_navigation.R
 
 class TransactionActivity : AppCompatActivity() {
 
