@@ -6,22 +6,18 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.fragment.app.activityViewModels
+import androidx.lifecycle.Observer
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.exercise_navigation.R
+import com.example.exercise_navigation.view_models.TransactionViewModel
 import kotlinx.android.synthetic.main.fragment_input_amount.*
 
-/**
- * A simple [Fragment] subclass.
- * Use the [FragmentInputAmount.newInstance] factory method to
- * create an instance of this fragment.
- */
-class FragmentInputAmount : Fragment(),View.OnClickListener {
+class FragmentInputAmount : Fragment(), View.OnClickListener {
 
-    lateinit var navController:NavController
-    lateinit var bankName:String
-    lateinit var accountNumber:String
-    lateinit var accountName:String
+    lateinit var navController: NavController
+    val transactionViewModel by activityViewModels<TransactionViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,7 +27,6 @@ class FragmentInputAmount : Fragment(),View.OnClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_input_amount, container, false)
     }
 
@@ -39,27 +34,16 @@ class FragmentInputAmount : Fragment(),View.OnClickListener {
         super.onViewCreated(view, savedInstanceState)
         navController = Navigation.findNavController(view)
         btnSend.setOnClickListener(this)
-    }
-
-    override fun onActivityCreated(savedInstanceState: Bundle?) {
-        super.onActivityCreated(savedInstanceState)
-        accountName = arguments?.getString("name").toString()
-        accountNumber = arguments?.getString("accountNumber").toString()
-        bankName = arguments?.getString("bankName").toString()
-        tvName.text = "To : ${accountName}"
-
+        transactionViewModel.transaction.observe(viewLifecycleOwner, Observer {
+            tvName.text = "TO : ${it.recepientName}"
+        })
     }
 
     override fun onClick(v: View?) {
-        when(v){
+        when (v) {
             btnSend -> {
-                var bundle = bundleOf(
-                    "name" to accountName,
-                    "bankName" to bankName,
-                    "accountNumber" to accountNumber,
-                    "amount" to etAmount.text.toString()
-                )
-                navController.navigate(R.id.action_fragmentInputAmount_to_fragmentConfirmation,bundle)
+                transactionViewModel.setAmount(etAmount.text.toString().toInt())
+                navController.navigate(R.id.action_fragmentInputAmount_to_fragmentConfirmation)
             }
         }
     }

@@ -12,11 +12,6 @@ import com.example.exercise_navigation.R
 import com.example.exercise_navigation.ui.activity.TransactionActivity
 import kotlinx.android.synthetic.main.fragment_home.*
 
-/**
- * A simple [Fragment] subclass.
- * Use the [FragmentHome.newInstance] factory method to
- * create an instance of this fragment.
- */
 class FragmentHome : Fragment(),View.OnClickListener {
 
     lateinit var navController: NavController
@@ -29,7 +24,6 @@ class FragmentHome : Fragment(),View.OnClickListener {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 

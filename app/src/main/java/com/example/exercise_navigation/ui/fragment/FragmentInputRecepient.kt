@@ -6,29 +6,26 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.core.os.bundleOf
+import androidx.fragment.app.activityViewModels
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.exercise_navigation.R
+import com.example.exercise_navigation.view_models.TransactionViewModel
 import kotlinx.android.synthetic.main.fragment_input_recepient.*
 
-/**
- * A simple [Fragment] subclass.
- * Use the [FragmentInputRecepient.newInstance] factory method to
- * create an instance of this fragment.
- */
-class FragmentInputRecepient : Fragment(),View.OnClickListener {
+class FragmentInputRecepient : Fragment(), View.OnClickListener {
 
     lateinit var navController: NavController
+    val transactionViewModel by activityViewModels<TransactionViewModel>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-     }
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_input_recepient, container, false)
     }
 
@@ -39,14 +36,12 @@ class FragmentInputRecepient : Fragment(),View.OnClickListener {
     }
 
     override fun onClick(v: View?) {
-        when(v){
+        when (v) {
             btnNext -> {
-                var bundle = bundleOf(
-                    "name" to etName.text.toString(),
-                    "bankName" to spinnerBank.selectedItem.toString(),
-                    "accountNumber" to etAccountNumber.text.toString()
-                )
-                navController.navigate(R.id.action_fragmentInputRecepient2_to_fragmentInputAmount,bundle)
+                transactionViewModel.setName(etName.text.toString())
+                transactionViewModel.setBankName(spinnerBank.selectedItem.toString())
+                transactionViewModel.setAccountNumber(etAccountNumber.text.toString().toInt())
+                navController.navigate(R.id.action_fragmentInputRecepient2_to_fragmentInputAmount)
             }
         }
     }
